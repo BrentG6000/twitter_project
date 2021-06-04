@@ -14,7 +14,7 @@ const { v4: uuidv4 } = require('uuid');
 
 const envTest = process.env.DB_CONNECTION
 const consumerKey = process.env.CONSUMER_KEY
-const consumerSecret = process.env.CONSUMER_SE
+const consumerSecret = process.env.CONSUMER_SECRET
 
 // for seesion id
 let sessionId = ''
