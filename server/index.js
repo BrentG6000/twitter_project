@@ -20,7 +20,12 @@ const consumerSecret = process.env.CONSUMER_SE
 let sessionId = ''
 
 let user = {}
-let liteArgs = config
+let liteArgs = {  
+  consumer_key: consumerKey ,  
+  consumer_secret: consumerSecret,  
+  access_token_key: '',  
+  access_token_secret: ''  
+}
 let client
 const PORT = process.env.PORT || 5000
 
