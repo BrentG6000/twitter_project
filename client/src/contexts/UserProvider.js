@@ -7,7 +7,7 @@ const UserProvider = props => {
     
     useEffect(() => {
         loadData()
-    }, [user])
+    }, [])
 
     async function loadData() {
         try {
@@ -15,7 +15,6 @@ const UserProvider = props => {
         const response = await fetch('/user')
         
         const data = await response.json()
-        console.log('test')
         await setUser(data)
         
         } 
