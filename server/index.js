@@ -7,12 +7,14 @@ const twitter = require('twitter-lite')
 const TwitterStrategy = require('passport-twitter').Strategy
 const { initialize } = require('passport')
 const { v4: uuidv4 } = require('uuid');
-const { clientSecret } = require('../config')
-const config = require('../config/config')
-const keys = require('../config/index')
-require('dotenv').config()
+//const { clientSecret } = require('../config')
+//const config = require('../config/config') // Add this to run locally
+//const keys = require('../config/index')
+//require('dotenv').config()
 
 const envTest = process.env.DB_CONNECTION
+const consumerKey = process.env.CONSUMER_KEY
+const consumerSecret = process.env.CONSUMER_SE
 
 // for seesion id
 let sessionId = ''
@@ -22,9 +24,37 @@ let liteArgs = config
 let client
 const PORT = process.env.PORT || 5000
 
+// passport.use(new TwitterStrategy({
+//   consumerKey: keys['clientID'],
+//   consumerSecret: keys['clientSecret'],
+//   callbackURL: '/auth/twitter/callback'
+// },
+// function(token, tokenSecret, profile, cb) {
+  
+//    user = { ...profile }
+//    liteArgs['access_token_key'] = token
+//    liteArgs['access_token_secret'] = tokenSecret
+//    client = new twitter(liteArgs)
+//   return cb(null, profile)
+// }));
+
+// passport.use(new TwitterStrategy({
+//   consumerKey: config['consumer_key'],
+//   consumerSecret: config['consumer_secret'],
+//   callbackURL: '/auth/twitter/callback'
+// },
+// function(token, tokenSecret, profile, cb) {
+  
+//    user = { ...profile }
+//    liteArgs['access_token_key'] = token
+//    liteArgs['access_token_secret'] = tokenSecret
+//    client = new twitter(liteArgs)
+//   return cb(null, profile)
+// }));
+
 passport.use(new TwitterStrategy({
-  consumerKey: keys['clientID'],
-  consumerSecret: keys['clientSecret'],
+  consumerKey: consumerKey,
+  consumerSecret: consumerSecret,
   callbackURL: '/auth/twitter/callback'
 },
 function(token, tokenSecret, profile, cb) {
