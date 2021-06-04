@@ -9,7 +9,7 @@ function Button({buttonText, buttonLink}) {
     }
 
     return (
-        buttonLink.includes('5000') ?
+        buttonLink.includes('auth') ?
             <div className='btn from-top' onClick={() => handleClick()}>
                 {buttonText}
             </div> :
