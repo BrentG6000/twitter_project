@@ -98,10 +98,6 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(express.json())
 
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
-});
-
 app.get('/auth/twitter', passport.authenticate('twitter'))
 app.get('/auth/twitter/callback', 
   passport.authenticate('twitter', { failureRedirect: '/login' }),
@@ -117,6 +113,10 @@ app.get('/user', (req, res) => {
 //     user = {}
 //     res.redirect('/')
 // })
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+});
 
 app.post('/tweet', (req, res) => {
   res.sendStatus(200)
