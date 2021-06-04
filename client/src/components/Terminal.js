@@ -31,10 +31,10 @@ import '../styles/tweetForm.scss'
         event.preventDefault() // Prevent default submission    
         try {
             await postData()      
-            alert('Your registration was successfully submitted!')
+            alert('Your tweet was successfully submitted!')
             setTweet('')
         } catch (e) {
-          alert(`Registration failed! ${e.message}`)
+          alert(`Tweet failed! ${e.message}`)
         }
       }
     
