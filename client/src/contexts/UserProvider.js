@@ -11,7 +11,7 @@ const UserProvider = props => {
 
     async function loadData() {
         try {
-            
+        console.log('test')    
         const response = await fetch('/user')
         
         const data = await response.json()
