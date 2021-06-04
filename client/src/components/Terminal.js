@@ -19,7 +19,7 @@ import '../styles/tweetForm.scss'
         
         try {
             console.log(JSON.parse(requestOptions.body).tweet.length)
-            const response = await fetch('http://localhost:5000/tweet', requestOptions)
+            const response = await fetch('https://brentg123-twitter-project.herokuapp.com/tweet', requestOptions)
             const data = await response
         }
         catch (e) {

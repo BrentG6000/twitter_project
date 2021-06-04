@@ -16,7 +16,6 @@ const UserProvider = props => {
         const response = await fetch('https://brentg123-twitter-project.herokuapp.com/user')
         const data = await response.json()
         await setUser(data)
-        
         } 
         catch (e) {
             console.log(e)
