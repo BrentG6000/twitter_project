@@ -7,7 +7,7 @@ const UserProvider = props => {
     
     useEffect(() => {
         loadData()
-    }, [])
+    }, [user])
 
     async function loadData() {
         try {
