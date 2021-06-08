@@ -2,7 +2,7 @@ import React from 'react'
 import Frost from '../components/Frost'
 
 function Home() {
-    const headerText = `Welcome to Twitter Logger!`
+    const headerText = `Welcome to Twitter Profile Searcher!`
     const bodyText =`Here you can log into a Twitter Account and record tweets into a database`
     const buttonText = 'Begin'
     const addButton = 'true'
