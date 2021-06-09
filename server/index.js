@@ -8,7 +8,7 @@ const TwitterStrategy = require('passport-twitter').Strategy
 const { initialize } = require('passport')
 const { v4: uuidv4 } = require('uuid');
 //const { clientSecret } = require('../config')
-const config = require('../config/config') // Add this to run locally
+//const config = require('../config/config') // Add this to run locally
 
 const consumerKey = process.env.CONSUMER_KEY
 const consumerSecret = process.env.CONSUMER_SECRET
