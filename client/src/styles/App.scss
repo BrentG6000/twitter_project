@@ -23,9 +23,9 @@ html {
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
-  // @media(max-width:480px) {
-  //   //display: grid;
-  // }
+  @media(max-width:480px) {
+    background-attachment: scroll;
+  }
 }
 
 a[href] {
