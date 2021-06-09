@@ -12,7 +12,7 @@ const { v4: uuidv4 } = require('uuid');
 //const keys = require('../config/index')
 //require('dotenv').config()
 
-const envTest = process.env.DB_CONNECTION
+//const envTest = process.env.DB_CONNECTION
 const consumerKey = process.env.CONSUMER_KEY
 const consumerSecret = process.env.CONSUMER_SECRET
 //  const consumerKey = config['consumer_key']
@@ -65,7 +65,6 @@ passport.use(new TwitterStrategy({
   callbackURL: '/auth/twitter/callback'
 },
 function(token, tokenSecret, profile, cb) {
-  
    user = { ...profile }
    liteArgs['access_token_key'] = token
    liteArgs['access_token_secret'] = tokenSecret

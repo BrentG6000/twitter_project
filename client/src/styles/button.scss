@@ -11,6 +11,9 @@
 	user-select: none;
 	z-index: 0;
 	text-decoration: none;
+	@media(max-width:480px) {
+		font-size: 14px;
+	  }
 }
 
 .btn:before, .btn:after {

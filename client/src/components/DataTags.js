@@ -5,18 +5,19 @@ import _ from 'lodash'
 import ReactTooltip from 'react-tooltip'
 import '../index.css'
 import '../styles/button.scss'
+import '../styles/App.scss'
 
 const LoginMsg = "Uh oh, there's nothing to show! " +
     "Login to see how much of your invaluable personal " +
     "data tech companies have at their disposal."
 
 const DataTags = () => {
-    const pStyle = {
-        overflow: 'hidden',
-        textOverflow: 'ellipsis',
-        margin: 2,
-        fontSize: 12
-    }
+    // const pStyle = {
+    //     overflow: 'hidden',
+    //     textOverflow: 'ellipsis',
+    //     margin: 2,
+    //     fontSize: 12
+    // }
     
     const [selected, setSelected] = useContext(DataTagProvider.context)
     const userData = useContext(UserProvider.context)
@@ -63,7 +64,7 @@ const DataTags = () => {
                                     className={`tag ${extraClass}`}
                                     data-tip={ tip }
                                 >
-                                    <p style={pStyle} >
+                                    <p>
                                         {buttonName}   
                                     </p>
                                     <ReactTooltip place='right' effect='solid'/> 

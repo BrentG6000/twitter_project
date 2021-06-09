@@ -18,6 +18,4 @@ function Frost({ headerText, bodyText, buttonText, addButton, buttonLink, twitte
     )
 }
 
-// { headerText === 'Twitter Profile' : }
-
 export default Frost
