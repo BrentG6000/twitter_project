@@ -23,9 +23,7 @@ html {
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
-  @media(max-width:480px) {
-    background-attachment: static;
-  }
+  -webkit-background-size: cover;
 }
 
 a[href] {
