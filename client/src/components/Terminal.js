@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import { useState, useContext } from 'react'
 import UserProvider from '../contexts/UserProvider'
 import DataTagProvider from '../contexts/DataTagContext'
 import '../styles/tweetForm.scss'
@@ -20,6 +20,7 @@ import '../styles/tweetForm.scss'
         try {
             console.log(JSON.parse(requestOptions.body).tweet.length)
             const response = await fetch('https://brentg123-twitter-project.herokuapp.com/tweet', requestOptions)
+            //const response = await fetch('http://localhost:5000/tweet', requestOptions)
             const data = await response
         }
         catch (e) {
@@ -133,10 +134,16 @@ import '../styles/tweetForm.scss'
                                  </p>
                             </div>
                         )
-                        default: 
+                        case 'All': 
                             return (
                                 <div className='content'>
                                     <pre>{jsonCode}</pre>
+                                </div>
+                            )
+                        default: 
+                            return (
+                                <div className='content'>
+                                    <pre style={{textAlign: 'center'}}>{jsonCode.replace(/^"(.*)"$/, '$1')}</pre>
                                 </div>
                             )
                     }})() }

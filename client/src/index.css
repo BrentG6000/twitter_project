@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "GunPlay";
+  src: local("GunPlay"),
+    url("./fonts/GUNPLAY_.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Edensor";
+  src: local("Edensor"),
+    url("./fonts/Edensor-Free.otf") format("truetype");
+  font-weight: normal;
+}

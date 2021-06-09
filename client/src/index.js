@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './fonts/GUNPLAY_.ttf'
+import './fonts/Edensor-Free.otf'
 
 ReactDOM.render(
   <React.StrictMode>
