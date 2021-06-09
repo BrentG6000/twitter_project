@@ -3,7 +3,7 @@ import Frost from '../components/Frost'
 
 function Home() {
     const headerText = `Welcome to Twitter Profile Searcher!`
-    const bodyText =`Here you can log into a Twitter ccount and search that account's profile`
+    const bodyText =`Here you can log into a Twitter account and search that account's profile`
     const buttonText = 'Begin'
     const addButton = 'true'
 
