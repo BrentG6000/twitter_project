@@ -24,7 +24,7 @@ html {
   background-position: center center;
   background-attachment: fixed;
   @media(max-width:480px) {
-    background-attachment: scroll;
+    background-attachment: static;
   }
 }
 
