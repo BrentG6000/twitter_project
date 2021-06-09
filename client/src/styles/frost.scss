@@ -46,7 +46,9 @@
         font-size: 20px;
       }
     @media (max-width: 425px) {
-        //height: 150%;
+        p {
+            font-size: 0px;
+        }
     }
     h2 {
         font-family: GunPlay;
