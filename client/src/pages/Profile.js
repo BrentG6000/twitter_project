@@ -9,7 +9,7 @@ import '../styles/tweetForm.scss'
 function Profile() {
     const userData = useContext(UserProvider.context)
     const headerText = 'Twitter Profile'
-    const bodyText = 'Click on any of the available options'
+    const bodyText = 'Click any button'
     const buttonText = 'Back'
     const addButton = false
     const twitterData = true
