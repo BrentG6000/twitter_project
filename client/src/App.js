@@ -14,19 +14,29 @@ function App() {
   const userData = useContext(UserProvider.context)
 
   return (
-    <Router>
-      <div className='react-root'>
-        <Navbar />
-          <Route path='/' exact component={Home}/>
-          <Route path='/About' component={About}/>
-          <Route path='/Login' component={Login}/>
-          <UserProvider>
-          <DataTagProvider>
+    <div
+      style={{
+        height: 100vh;
+        backgroundImage: url(./background1.jpg);
+        backgroundSize: cover;
+        backgroundRepeat: no-repeat;
+        backgroundPosition: center center;
+        backgroundAttachment: fixed;
+      }}>
+      <Router>
+        <div className='react-root'>
+          <Navbar />
+            <Route path='/' exact component={Home}/>
+            <Route path='/About' component={About}/>
+            <Route path='/Login' component={Login}/>
+            <UserProvider>
+            <DataTagProvider>
               <Route path='/Profile' component={Profile}/>          
-          </DataTagProvider>
-          </UserProvider>
-      </div>
-    </Router>
+            </DataTagProvider>
+            </UserProvider>
+        </div>
+      </Router>
+    </div>
   );
 }
 
