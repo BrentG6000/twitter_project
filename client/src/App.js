@@ -8,6 +8,7 @@ import About from './pages/About'
 import Profile from './pages/Profile'
 import UserProvider from './contexts/UserProvider'
 import DataTagProvider from './contexts/DataTagContext'
+import background from './background1.jpg'
 import './styles/App.scss'
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
     <div
       style={{
         height: '100vh',
-        backgroundImage: 'url(./background1.jpg)',
+        backgroundImage: 'url('+background+')',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center center',
