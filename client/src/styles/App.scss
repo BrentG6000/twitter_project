@@ -19,10 +19,10 @@
 html {
   min-height: 100vh;
   background-image: url(../background1.jpg);
-  background-size: cover;
+  background-size: 110%;
   background-repeat: no-repeat;
   background-position: center center;
-  background-attachment: unset;
+  background-attachment: fixed;
   -webkit-background-size: cover;
 }
 
