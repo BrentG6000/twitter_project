@@ -15,15 +15,6 @@ function App() {
   const userData = useContext(UserProvider.context)
 
   return (
-    <div
-      style={{
-        height: '100vh',
-        backgroundImage: 'url('+background+')',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center center',
-        backgroundAttachment: 'fixed'
-      }}>
       <Router>
         <div className='react-root'>
           <Navbar />
@@ -37,8 +28,17 @@ function App() {
             </UserProvider>
         </div>
       </Router>
-    </div>
   );
 }
 
 export default App;
+
+{/* <div
+style={{
+  height: '100vh',
+  backgroundImage: 'url('+background+')',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center center',
+  backgroundAttachment: 'fixed'
+}}> */}
