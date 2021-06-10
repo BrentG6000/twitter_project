@@ -16,12 +16,12 @@ function App() {
   return (
     <div
       style={{
-        height: 100vh;
-        backgroundImage: url(./background1.jpg);
-        backgroundSize: cover;
-        backgroundRepeat: no-repeat;
-        backgroundPosition: center center;
-        backgroundAttachment: fixed;
+        height: '100vh',
+        backgroundImage: 'url(./background1.jpg)',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat'
+        backgroundPosition: 'center center'
+        backgroundAttachment: 'fixed'
       }}>
       <Router>
         <div className='react-root'>
