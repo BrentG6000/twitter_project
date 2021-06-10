@@ -6,7 +6,7 @@ import '../styles/frost.scss'
 function Frost({ headerText, bodyText, buttonText, addButton, buttonLink, twitterData, profile}) {
     return (
     <div className='frost'>
-        <div className='insideFrostContainer' { profile ? id='profile'}>
+        <div className='insideFrostContainer' { profile ? id='profile' : ''}>
             <h2>{headerText}</h2>
             <p>{bodyText}</p>
             {twitterData ? <DataTags /> : <div></div>}
