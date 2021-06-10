@@ -13,12 +13,13 @@ function Profile() {
     const buttonText = 'Back'
     const addButton = false
     const twitterData = true
+    const profile = true
 
     return (
         <>
             { _.isEmpty(userData) ? <Login/> :
             <div id='resize'>
-                <Frost headerText={headerText} bodyText={bodyText} buttonText={buttonText} addButton={addButton} twitterData={twitterData}>
+                <Frost headerText={headerText} bodyText={bodyText} buttonText={buttonText} addButton={addButton} twitterData={twitterData} profile={profile}>
                 </Frost>
                 <Terminal/>
             </div>

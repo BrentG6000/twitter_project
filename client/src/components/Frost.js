@@ -3,25 +3,16 @@ import Button from './Button'
 import DataTags from './DataTags'
 import '../styles/frost.scss'
 
-function Frost({ headerText, bodyText, buttonText, addButton, buttonLink, twitterData}) {
+function Frost({ headerText, bodyText, buttonText, addButton, buttonLink, twitterData, profile}) {
     return (
     <div className='frost'>
-        { twitterData ?  
-            <div className='insideFrostContainer'>
-                <h2>{headerText}</h2>
-                <p>{bodyText}</p>
-                {twitterData ? <DataTags /> : <div></div>}
-                {addButton ?
-                    <Button buttonText={buttonText} buttonLink={buttonLink}/> : <p></p>}
-            </div> :
-            <div className='insideFrostContainer'>
+        <div className='insideFrostContainer' { profile ? id='profile'}>
             <h2>{headerText}</h2>
             <p>{bodyText}</p>
             {twitterData ? <DataTags /> : <div></div>}
             {addButton ?
                 <Button buttonText={buttonText} buttonLink={buttonLink}/> : <p></p>}
             </div>
-        }
     </div>
     )
 }
