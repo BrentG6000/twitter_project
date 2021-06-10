@@ -19,8 +19,8 @@ function App() {
         height: '100vh',
         backgroundImage: 'url(./background1.jpg)',
         backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat'
-        backgroundPosition: 'center center'
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center center',
         backgroundAttachment: 'fixed'
       }}>
       <Router>
