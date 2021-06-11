@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './fonts/GUNPLAY_.ttf'
 import './fonts/Edensor-Free.otf'
+import './fonts/lato/Lato-Regular.ttf'
 
 ReactDOM.render(
   <React.StrictMode>

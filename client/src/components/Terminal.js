@@ -18,10 +18,12 @@ import '../styles/tweetForm.scss'
         }
         
         try {
+            
             console.log(JSON.parse(requestOptions.body).tweet.length)
             const response = await fetch('https://brentg123-twitter-project.herokuapp.com/tweet', requestOptions)
             //const response = await fetch('http://localhost:5000/tweet', requestOptions)
             const data = await response
+            
         }
         catch (e) {
             console.log(e)
@@ -31,9 +33,15 @@ import '../styles/tweetForm.scss'
     const Submit = async (event) => {
         event.preventDefault() // Prevent default submission    
         try {
+            if (tweet === '') {
+                tweet === '' ? alert("There is nothing in the text field to tweet!")
+                throw "Can't send an empty tweet."
+            }
+            else {
             await postData()      
             alert('Your tweet was successfully submitted!')
             setTweet('')
+            }
         } catch (e) {
           alert(`Tweet failed! ${e.message}`)
         }
