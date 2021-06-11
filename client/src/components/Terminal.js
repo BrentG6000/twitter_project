@@ -34,7 +34,7 @@ import '../styles/tweetForm.scss'
         event.preventDefault() // Prevent default submission    
         try {
             if (tweet === '') {
-                tweet === '' ? alert("There is nothing in the text field to tweet!")
+                alert("There is nothing in the text field to tweet!")
                 throw "Can't send an empty tweet."
             }
             else {
