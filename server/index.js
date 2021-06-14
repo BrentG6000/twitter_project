@@ -6,13 +6,13 @@ const session = require('express-session')
 const twitter = require('twitter-lite')
 const TwitterStrategy = require('passport-twitter').Strategy
 const { initialize } = require('passport')
-// const { clientSecret } = require('../config')
-// const config = require('../config/config')
+const { clientSecret } = require('../config')
+const config = require('../config/config')
 
-const consumerKey = process.env.CONSUMER_KEY
-const consumerSecret = process.env.CONSUMER_SECRET
-//  const consumerKey = config['consumer_key']
-//  const consumerSecret = config['consumer_secret']
+// const consumerKey = process.env.CONSUMER_KEY
+// const consumerSecret = process.env.CONSUMER_SECRET
+ const consumerKey = config['consumer_key']
+ const consumerSecret = config['consumer_secret']
 
 let user = {}
 let liteArgs = {  
@@ -60,8 +60,8 @@ app.get('/auth/twitter', passport.authenticate('twitter'))
 app.get('/auth/twitter/callback', 
   passport.authenticate('twitter', { failureRedirect: '/login' }),
   function(req, res) {
-      //res.redirect('http://localhost:3000/Profile')
-      res.redirect('https://brentg123-twitter-project.herokuapp.com/Profile')
+      res.redirect('http://localhost:3000/Profile')
+      //res.redirect('https://brentg123-twitter-project.herokuapp.com/Profile')
   })
 app.get('/user', (req, res) => {
     res.send(user)
