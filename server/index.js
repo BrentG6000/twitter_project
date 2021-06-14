@@ -6,14 +6,13 @@ const session = require('express-session')
 const twitter = require('twitter-lite')
 const TwitterStrategy = require('passport-twitter').Strategy
 const { initialize } = require('passport')
-//const { v4: uuidv4 } = require('uuid');
-const { clientSecret } = require('../config')
-const config = require('../config/config')
+// const { clientSecret } = require('../config')
+// const config = require('../config/config')
 
-// const consumerKey = process.env.CONSUMER_KEY
-// const consumerSecret = process.env.CONSUMER_SECRET
- const consumerKey = config['consumer_key']
- const consumerSecret = config['consumer_secret']
+const consumerKey = process.env.CONSUMER_KEY
+const consumerSecret = process.env.CONSUMER_SECRET
+//  const consumerKey = config['consumer_key']
+//  const consumerSecret = config['consumer_secret']
 
 let user = {}
 let liteArgs = {  
