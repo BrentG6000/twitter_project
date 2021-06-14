@@ -142,7 +142,7 @@ import '../styles/tweetForm.scss'
                         )
                         case 'All': 
                             return (
-                                <div className='content'>
+                                <div className='content' id='all'>
                                     <p style={{textAlign: 'left'}}>
                                     <pre>{jsonCode}</pre>
                                     </p>

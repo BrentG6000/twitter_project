@@ -76,6 +76,13 @@ a[href] {
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
   font-size: 16px;
+  overflow:scroll;
+  height: 200px;
+}
+
+#all {
+  height: 200px;
+  overflow:scroll;
 }
 
 .page {

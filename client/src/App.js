@@ -13,14 +13,14 @@ function App() {
       <Router>
         <div className='react-root'>
           <Navbar />
-            <Route path='/' exact component={Home}/>
-            <Route path='/About' component={About}/>
-            <Route path='/Login' component={Login}/>
-            <UserProvider>
+              <Route path='/' exact component={Home}/>
+              <Route path='/About' component={About}/>
+              <Route path='/Login' component={Login}/>
+          <UserProvider>
             <DataTagProvider>
-              <Route path='/Profile' component={Profile}/>          
+                <Route path='/Profile' component={Profile}/>    
             </DataTagProvider>
-            </UserProvider>
+          </UserProvider>
         </div>
       </Router>
   );
