@@ -1,8 +1,7 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/button.scss'
 
-function Button({buttonText, buttonLink}) {
+function Button({ buttonText, buttonLink }) {
     function handleClick() {
         alert("This app will place a cookie on your browser. Continue?")
         window.location = buttonLink

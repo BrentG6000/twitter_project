@@ -17,13 +17,9 @@ import '../styles/tweetForm.scss'
             body: JSON.stringify({ tweet: tweet })
         }
         
-        try {
-            
-            console.log(JSON.parse(requestOptions.body).tweet.length)
-            const response = await fetch('https://brentg123-twitter-project.herokuapp.com/tweet', requestOptions)
-            //const response = await fetch('http://localhost:5000/tweet', requestOptions)
-            const data = await response
-            
+        try {   
+            //await fetch('https://brentg123-twitter-project.herokuapp.com/tweet', requestOptions)
+            await fetch('http://localhost:5000/tweet', requestOptions)
         }
         catch (e) {
             console.log(e)
@@ -31,16 +27,18 @@ import '../styles/tweetForm.scss'
     }
 
     const Submit = async (event) => {
-        event.preventDefault() // Prevent default submission    
+        event.preventDefault()
         try {
             if (tweet === '') {
-                alert("There is nothing in the text field to tweet!")
-                throw "Can't send an empty tweet."
+                throw new Error("Can't send an empty tweet!")
+            }
+            else if (tweet.length > 280) {
+                throw new Error("Can't tweet more than 280 characters!")
             }
             else {
-            await postData()      
-            alert('Your tweet was successfully submitted!')
-            setTweet('')
+                await postData()      
+                alert('Your tweet was successfully submitted!')
+                setTweet('')
             }
         } catch (e) {
           alert(`Tweet failed! ${e.message}`)
@@ -145,13 +143,17 @@ import '../styles/tweetForm.scss'
                         case 'All': 
                             return (
                                 <div className='content'>
+                                    <p style={{textAlign: 'left'}}>
                                     <pre>{jsonCode}</pre>
+                                    </p>
                                 </div>
                             )
                         default: 
                             return (
                                 <div className='content'>
-                                    <pre style={{textAlign: 'center'}}>{jsonCode.replace(/^"(.*)"$/, '$1')}</pre>
+                                    <p style={{textAlign: 'center'}}>
+                                        <pre style={{textAlign: 'center'}}>{jsonCode.replace(/^"(.*)"$/, '$1')}</pre>
+                                    </p>
                                 </div>
                             )
                     }})() }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Squash as Hamburger} from 'hamburger-react'
 import '../styles/navbar.scss'
 
@@ -41,9 +41,10 @@ function Burger({ isActive, setActive }) {
         onMouseLeave={() => Exit()}
         onClick={() => setActive(!isActive)}
         >
-            <Hamburger color={burgerColor} onToggle={toggled => {
-                toggled ? isToggled=true :  isToggled=false
-            }} />
+            <Hamburger
+                color={burgerColor}
+                onToggle={ toggled => { toggled ? isToggled=true : isToggled=false }}
+            />
         </div>
     )
 }

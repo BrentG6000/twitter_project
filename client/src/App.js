@@ -1,6 +1,4 @@
-import React, { useContext } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import _ from 'lodash'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Login from './pages/Login'
@@ -8,12 +6,9 @@ import About from './pages/About'
 import Profile from './pages/Profile'
 import UserProvider from './contexts/UserProvider'
 import DataTagProvider from './contexts/DataTagContext'
-import background from './background1.jpg'
 import './styles/App.scss'
 
 function App() {
-  const userData = useContext(UserProvider.context)
-
   return (
       <Router>
         <div className='react-root'>
@@ -31,14 +26,4 @@ function App() {
   );
 }
 
-export default App;
-
-{/* <div
-style={{
-  height: '100vh',
-  backgroundImage: 'url('+background+')',
-  backgroundSize: 'cover',
-  backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'center center',
-  backgroundAttachment: 'fixed'
-}}> */}
+export default App

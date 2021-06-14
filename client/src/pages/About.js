@@ -1,4 +1,3 @@
-import React from 'react'
 import Frost from '../components/Frost'
 
 function About() {
@@ -8,7 +7,11 @@ function About() {
     const addButton = false
     return (
         <div id='resize'>
-        <Frost headerText={headerText} bodyText={bodyText} buttonText={buttonText} addButton={addButton}/>
+        <Frost
+            headerText={headerText}
+            bodyText={bodyText}
+            buttonText={buttonText}
+            addButton={addButton}/>
         </div>
     )
 }

@@ -6,17 +6,14 @@ const session = require('express-session')
 const twitter = require('twitter-lite')
 const TwitterStrategy = require('passport-twitter').Strategy
 const { initialize } = require('passport')
-const { v4: uuidv4 } = require('uuid');
-//const { clientSecret } = require('../config')
-//const config = require('../config/config') // Add this to run locally
+//const { v4: uuidv4 } = require('uuid');
+const { clientSecret } = require('../config')
+const config = require('../config/config')
 
-const consumerKey = process.env.CONSUMER_KEY
-const consumerSecret = process.env.CONSUMER_SECRET
-//  const consumerKey = config['consumer_key']
-//  const consumerSecret = config['consumer_secret']
-
-// for seesion id
-let sessionId = ''
+// const consumerKey = process.env.CONSUMER_KEY
+// const consumerSecret = process.env.CONSUMER_SECRET
+ const consumerKey = config['consumer_key']
+ const consumerSecret = config['consumer_secret']
 
 let user = {}
 let liteArgs = {  
@@ -50,18 +47,12 @@ passport.deserializeUser((obj,cb) => {
 })
 
 const app = express()
+
 app.use(cors())
-
 app.use(express.static(path.resolve(__dirname, '../client/build')))
-
-// Allows data from forms to be accessed
 app.use(express.urlencoded({ extended: true }))
 app.use(session({
-  genid: () => {
-    sessionId = uuidv4()
-    return sessionId
-  },
-  secret: 'keyboard cat', resave: true, saveUninitialized: true, secure: true }))
+  secret: "PmX'tK11lc$78szv#fUc\"(|(-Q8lFGWTu<tgL*n}TD[", resave: true, saveUninitialized: true, secure: true }))
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(express.json())
@@ -70,18 +61,12 @@ app.get('/auth/twitter', passport.authenticate('twitter'))
 app.get('/auth/twitter/callback', 
   passport.authenticate('twitter', { failureRedirect: '/login' }),
   function(req, res) {
-      //res.redirect('http://localhost:3000/Profile')
-      res.redirect('https://brentg123-twitter-project.herokuapp.com/Profile')
+      res.redirect('http://localhost:3000/Profile')
+      //res.redirect('https://brentg123-twitter-project.herokuapp.com/Profile')
   })
 app.get('/user', (req, res) => {
-    res.send(user) //: console.log('Not logged in!') 
+    res.send(user)
 })
-// app.get('/auth/logout', (req, res) => {
-//     console.log('logging out!')
-//     user = {}
-//     res.redirect('/')
-// })
-
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
